@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            #b1{
+                background-color: darkviolet;
+                color:bisque;
+            }
+            #t1,#t2,#res{
+                color: darkviolet;
+            }
+        </style>
+        <script>
+            function ValidateNo(){
+                var flag=ValidateNums("t1");
+                var flag1=ValidateNums("t2");
+                if(flag && flag1)
+                    AddNums();
+                else
+                    alert("Invalid Data");
+                
+            }
+            function ValidateNums(no){
+                var a= document.getElementById(no).value;
+                if(a==="" && isNaN(a))
+                    return alert("Invalid Data");
+                return true;
+            }
+            function AddNums(){
+                var a=parseInt(document.getElementById("t1").value);
+                var b=parseInt(document.getElementById("t2").value);
+                var ans=a+b;
+                document.getElementById("res").value=ans;
+                
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>Num1 : <input type="text" name="t1" id="t1"></td>    
+                </tr>
+                <tr>
+                    <td>Num2: &nbsp;<input type="text" name="t2" id="t2"></td>  
+                </tr>
+                <tr>
+                    <td>Result : <input type="text" name="res" id="res" disabled></td>  
+                </tr>
+                <tr>
+                    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button type="button" name="b1" id="b1" value="Add" onclick="ValidateNo()">Add Nums</button></td>  
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
